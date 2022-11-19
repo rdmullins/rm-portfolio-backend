@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .serializers import *
+from django.http.response import Http404
+from rest_framework.views import APIView
+from .models import *
+from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
+from django.http import HttpResponse
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,3 +27,8 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
 # Create your views here.
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = PortfolioProject.objects.all()
+    serializer_class = PortfolioProjectSerializer
+    http_method_names = ["get", "post"]
