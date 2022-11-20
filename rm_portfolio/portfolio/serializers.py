@@ -21,7 +21,7 @@ class TechStackSerializer(serializers.ModelSerializer):
 
 
 class PortfolioProjectSerializer(serializers.ModelSerializer):
-    tech_stack = TechStackSerializer()
     class Meta:
         model = PortfolioProject
         fields = "__all__"
+    tech_stack = TechStackSerializer()

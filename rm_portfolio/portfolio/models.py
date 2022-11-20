@@ -12,3 +12,6 @@ class PortfolioProject(models.Model):
     live_link = models.URLField()
     tech_stack = models.ForeignKey(TechStack, on_delete=models.PROTECT, related_name="tech_stack_used")
     description = models.TextField()
+
+    def __str__(self):
+        return self.title
