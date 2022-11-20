@@ -14,13 +14,13 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 
-class TechStackSerializer(serializers.Serializer):
+class TechStackSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechStack
-        fields = ("name",)
+        fields = ("stack",)
 
 
-class PortfolioProjectSerializer(serializers.Serializer):
+class PortfolioProjectSerializer(serializers.ModelSerializer):
     tech_stack = TechStackSerializer()
     class Meta:
         model = PortfolioProject
