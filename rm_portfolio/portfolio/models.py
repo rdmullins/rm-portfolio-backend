@@ -5,6 +5,9 @@ from django.db import models
 class TechStack(models.Model):
     stack = models.CharField(max_length=256)
 
+    def __str__(self):
+        return self.stack
+
 class PortfolioProject(models.Model):
     title = models.CharField(max_length=256)
     screenshot = models.URLField()
