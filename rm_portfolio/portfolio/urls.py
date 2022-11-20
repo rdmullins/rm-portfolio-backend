@@ -1,5 +1,5 @@
 from django.urls import path, include
-from . import views
+from . import views, models
 from .views import *
 from rest_framework import routers
 

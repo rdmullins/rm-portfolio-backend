@@ -32,3 +32,9 @@ class ProjectViewSet(viewsets.ModelViewSet):
     queryset = PortfolioProject.objects.all()
     serializer_class = PortfolioProjectSerializer
     http_method_names = ["get", "post"]
+
+
+class TechStackViewSet(viewsets.ModelViewSet):
+    queryset = TechStack.objects.all()
+    serializer_class = TechStackSerializer
+    http_method_names = ["get", "post"]
